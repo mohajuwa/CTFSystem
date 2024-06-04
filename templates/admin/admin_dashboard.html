@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Admin Dashboard</h1>
+            <nav>
+                <ul>
+                    <li><a href="/admin/dashboard">Dashboard</a></li>
+                    <li><a href="/admin/add_challenge">Add Challenge</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Users</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for challenge in users %}
+                <tr>
+                    <td>{{ challenge.username }}</td>
+                    <td>{{ challenge.points }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <h2>Challenges</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Points</th>
+                    <th>Solution</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for challenge in challenges %}
+                <tr>
+                    <td>{{ challenge.title }}</td>
+                    <td>{{ challenge.points }}</td>
+                    <td>{{ challenge.solution }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
